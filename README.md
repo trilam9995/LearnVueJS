@@ -1,21 +1,5 @@
-# todo
+//DOC BASE
+https://github.com/bezkoder/vue-js-client-crud/blob/master/src/App.vue
 
-> This is a project to learn Vuejs
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+//Vuex
+https://blog.bitsrc.io/managing-states-in-vuejs-vuex-and-redux-e2229dd07eaa
