@@ -5,12 +5,12 @@
       <th>Username</th>
       <th colspan="2">Action</th>
     </tr>
-    <tr v-for="(user, index) in listUser" :key="user.id">
-      <td>{{ index + 1 }}</td>
-      <td>{{ user.Username }}</td>
-      <td><button>Edit</button></td>
-      <td><button @click="deleteUser(user.id)">Delete</button></td>
-    </tr>
+    <User
+      v-for="(user, index) in listUser"
+      :key="user.id"
+      v-bind:index="index"
+      v-bind:user="user"
+    />
   </table>
 </template>
 
@@ -20,6 +20,9 @@ import User from "../user";
 
 export default {
   name: "list-user",
+  components: {
+    User,
+  },
   data() {
     return {
       listUser: [],
@@ -69,11 +72,5 @@ th {
 th {
   background: #22cee2;
   color: #fff;
-}
-
-.listUser,
-td {
-  background: #fff;
-  color: #000;
 }
 </style>

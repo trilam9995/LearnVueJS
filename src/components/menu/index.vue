@@ -1,11 +1,16 @@
 <template>
   <div class="menuContainer">
     <nav class="menu">
-      <li class="nav-item">
-        <router-link to="/list-user" class="nav-link">List User</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/add-user" class="nav-link">Add User</router-link>
+      <li
+        class="nav-item"
+        v-for="menu in menuArray"
+        v-bind:key="menu.path"
+        v-bind:class="{ active: activeIndex === menu.id }"
+        @click="setActive(menu.id)"
+      >
+        <router-link :to="menu.path" class="nav-link">{{
+          menu.name
+        }}</router-link>
       </li>
     </nav>
   </div>
@@ -16,8 +21,25 @@ export default {
   name: "menu",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App",
+      activeIndex: 1,
+      menuArray: [
+        {
+          id: 1,
+          path: "list-user",
+          name: "List User",
+        },
+        {
+          id: 2,
+          path: "/add-user",
+          name: "Add User",
+        },
+      ],
     };
+  },
+  methods: {
+    setActive(id) {
+      this.activeIndex = id;
+    },
   },
 };
 </script>
@@ -37,7 +59,7 @@ export default {
   text-decoration: none;
 }
 
-.menu .active {
+.menu .active a {
   color: yellow;
   font-weight: 600;
 }

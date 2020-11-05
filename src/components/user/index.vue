@@ -1,15 +1,10 @@
 <template>
-  <div class="user">
-    <tr>
-      <td>aa</td>
-    </tr>
-    <!-- <tr v-for="(user, index) in listUser" :key="user.id">
-      <td>{{ index + 1 }}</td>
-      <td>{{ user.Username }}</td>
-      <td><button>Edit</button></td>
-      <td><button @click="deleteUser(user.id)">Delete</button></td>
-    </tr> -->
-  </div>
+  <tr class="user">
+    <td>{{ index + 1 }}</td>
+    <td>{{ user.Username }}</td>
+    <td><button>Edit</button></td>
+    <td><button @click="deleteUser(user.id)">Delete</button></td>
+  </tr>
 </template>
 
 <script>
@@ -20,9 +15,18 @@ export default {
       msg: "Welcome to Your Vue.js App",
     };
   },
+  props: {
+    index: Number,
+    user: Object,
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.user td {
+  background: #fff;
+  color: #000;
+  border: 1px solid black;
+  padding: 16px;
+}
 </style>
