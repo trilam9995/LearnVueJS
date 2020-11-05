@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import ListUser from "@/components/list-user";
 import AddUser from "@/components/add-user";
+import Operation from "@/components/operation";
 
 Vue.use(Router);
 
@@ -21,6 +22,11 @@ export default new Router({
       path: "/add-user",
       name: "AddUser",
       component: AddUser
+    },
+    {
+      path: "/operation",
+      name: "Operation",
+      component: Operation
     }
   ]
 });

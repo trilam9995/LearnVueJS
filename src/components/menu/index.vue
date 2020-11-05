@@ -33,6 +33,11 @@ export default {
           path: "/add-user",
           name: "Add User",
         },
+        {
+          id: 3,
+          path: "/operation",
+          name: "Operation",
+        },
       ],
     };
   },
